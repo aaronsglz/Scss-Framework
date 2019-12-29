@@ -1,0 +1,63 @@
+@if $include-nav-bar == true {
+  
+  
+
+
+	/************
+	************************ $NAVIGATION BAR
+	************/
+  
+	.site-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 1em;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		background-color: $color-primary;
+		box-shadow: shadow(low);
+		z-index: z(modal);
+	}
+
+		.site-nav__logo {
+			max-height: $nav-lineheight / 2;
+		}
+
+		.site-nav__list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.site-nav__item:last-child {
+			.dropmenu__list {
+				left: auto;
+				right: 0;
+			}
+		}
+
+		.site-nav__link {
+			position: relative;
+			z-index: z(modal);
+			padding: 0 0.5em;
+			line-height: $nav-lineheight;
+			color: $color-white;
+
+			&:visited {
+				color: $color-white;
+			}
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				outline: none;
+			}
+		}
+	
+} // end if

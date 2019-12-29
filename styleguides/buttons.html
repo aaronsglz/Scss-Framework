@@ -1,0 +1,156 @@
+﻿<div class="page  page--botones">
+    
+    <!-- BUTTONS -->
+    <section class="page-section  section">
+        <h3 class="section__title">Botones</h3>
+        
+        <div class="section__body">
+            <p>
+                Este es el componente bloque donde definimos las propiedades de nuestro botón y el cual extendemos en los modificadores.
+            </p>
+            
+<pre class="codeblock"><code class="language-css">%btn {
+    display: inline-block;
+    line-height: $baselineheight * 2;
+    color: $button-color;
+    text-align: center;
+    vertical-align: middle;
+    font-size: fs(normal);
+    white-space: nowrap;
+    background-color: $button-background;
+    border-top: $button-border-width solid $button-border-color;
+    border-right: $button-border-width solid $button-border-color;
+    border-bottom: $button-border-width solid $button-border-color;
+    border-left: $button-border-width solid $button-border-color;
+    cursor: pointer;
+    margin: 0.5em;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: $radius;
+    will-change: background-color, box-shadow;
+    @include transition(all $transition-hover ease-in);
+    box-shadow: shadow(low);
+    
+    &:hover {
+        text-decoration: none;
+        color: $button-color;
+        box-shadow: shadow(middle);
+    }
+    &:active,
+    &:focus{
+        outline:none;
+    }
+    &:visited {
+        color: $button-color;
+    }
+}</code></pre>
+            
+            <p>
+                Todos los botones heredan del bloque <code>%btn</code>. Después añadimos las modificaciones: <code>.btn--modificador</code>.
+            </p>
+            
+            <div>
+                <button type="button" class="btn--secondary">Secondary</button>
+                <button type="button" class="btn--primary">Primary</button>
+            </div>
+            
+<pre><code class="language-html">&lt;button class="btn--secondary"&gt;button&lt;/Secondary&gt;
+&lt;button class="btn--primary"&gt;Primary&lt;/button&gt;</code></pre>
+            
+            
+            <h4 class="subsection-title">Link buttons</h4>
+            <div>
+                <a href="#" class="btn--secondary">a.btn--secondary</a>
+                <a href="#" class="btn--primary">a.btn--primary</a>
+            </div>
+            
+<pre><code class="language-html">&lt;a href="#" class="btn--primary"&gt;btn--primary&lt;/a&gt;
+&lt;a href="#" class="btn--secondary"&gt;btn--secondary&lt;/a&gt;</code></pre>
+            
+            
+            <h4 class="subsection-title">Estados</h4>
+            <div>
+                <button type="button" class="btn--primary" disabled>Disabled</button>
+                <a href="#" class="btn--primary  btn--disabled">a.btn--disabled</a>
+            </div>
+            
+<pre class="codeblock"><code class="language-html">&lt;button class="btn--primary" disabled&gt;Primary&lt;/button&gt;
+&lt;a href="#" class="btn--primary  btn--disabled"&gt;a.btn--primary&lt;/a&gt;</code></pre>
+            
+            
+            <h4 class="subsection-title">Botones de bloque</h4>
+            <div>
+                <button type="button" class="btn--secondary  btn--block">Secondary</button>
+                <button type="button" class="btn--primary  btn--block">Primary</button>
+            </div>
+            
+<pre class="codeblock"><code class="language-html">&lt;button class="btn--secondary  btn--block"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn--primary  btn--block" &gt;Primary&lt;/button&gt;
+</code></pre>
+
+        </div>
+    </section>
+    
+    
+    
+    
+    <section class="page-section  section">
+        <h3 class="section__title">Botones de estado</h3>
+        
+        <div class="section__body">
+            <button type="button" class="btn--info">btn--info</button>
+            <button type="button" class="btn--success">btn--success</button>
+            <button type="button" class="btn--warning">btn--warning</button>
+            <button type="button" class="btn--danger">btn--danger</button>
+            
+<pre class="codeblock"><code class="language-html">&lt;button type="button" class="btn--info"&gt;btn--info&lt;/button&gt;
+&lt;button type="button" class="btn--success"&gt;btn--success&lt;/button&gt;
+&lt;button type="button" class="btn--warning"&gt;btn--warning&lt;/button&gt;
+&lt;button type="button" class="btn--danger"&gt;btn--danger&lt;/button&gt;</code></pre>
+        </div>
+        
+    </section>
+    
+    
+    
+    <!-- BUTTON SIZES -->
+    <section class="page-section  section">
+        <h3 class="section__title">Botones - tamaños</h3>
+        
+        <div class="section__body">
+            <button type="button" class="btn--primary  btn--small">Pequeño</button>
+            <button type="button" class="btn--primary">Normal</button>
+            <button type="button" class="btn--primary  btn--large">Grande</button>
+            
+<pre class="codeblock"><code class="language-html">&lt;a href="#" class="btn--primary  btn--small"&gt;Pequeño&lt;/a&gt;
+&lt;a href="#" class="btn--primary"&gt;Normal&lt;/a&gt;
+&lt;a href="#" class="btn--primary  btn--large"&gt;Grande&lt;/a&gt;</code></pre>
+        </div>
+    </section>
+    
+    
+    <!-- BUTTON GROUPS -->
+    <section class="page-section  section">
+        <h3 class="section__title">Botones agrupados</h3>
+        
+        <div class="section__body">
+            <div class="btn-group">
+                <button type="button" class="btn--primary">Acción 1</button>
+                <button type="button" class="btn--primary">Acción 2</button>
+                <button type="button" class="btn--primary">Acción 3</button>
+                <button type="button" class="btn--primary">Acción 4</button>
+            </div>
+            
+<pre class="codeblock"><code class="language-html">&lt;div class="btn-group"&gt;
+    &lt;button type="button" class="btn--primary"&gt;Acción 1&lt;/button&gt;
+    &lt;button type="button" class="btn--primary"&gt;Acción 2&lt;/button&gt;
+    &lt;button type="button" class="btn--primary"&gt;Acción 3&lt;/button&gt;
+    &lt;button type="button" class="btn--primary"&gt;Acción 4&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+        </div>
+    </section>
+    
+</div>

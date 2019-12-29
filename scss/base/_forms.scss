@@ -2,216 +2,186 @@
 
 
 
-
-/*------------------------------------*\
-    $FORMULARIOS
-\*------------------------------------*/
+/************
+************************ $FORMS
+************/
 
 form {
-	margin : 0 0 $baselineheight 0;
+	margin: 0 0 $baselineheight 0;
 
 	fieldset {
-		margin-bottom : $baselineheight;
-		padding : 0;
-		border-width : 0;
+		margin-bottom: $baselineheight;
+		padding: 0;
+		border-width: 0;
 	}
 
 	legend {
-		display : block;
-		width : 100%;
-		margin-bottom : $baselineheight * 2;
-		padding : 0;
-		color : $textcolor;
-		border : 0;
-		border-bottom : $inputborderwidth $inputborderstyle $inputborder;
-		white-space : normal;
+		display: block;
+		width: 100%;
+		margin-bottom: 1em;
+		padding: 0;
+		color: $color-text;
+		border: 0;
+		border-bottom: $input-border-width $input-border-style $input-border-color;
+		white-space: normal;
 
 		small {
-			font-size: fs(x-small);
-			color : $color-lightgrey;
+			font-size: fs(small);
+			color: $color-grey;
 		}
 	}
 
 	p {
-		margin-bottom : $baselineheight / 2;
+		margin-bottom: $baselineheight / 2;
 	}
 
 	ul {
-		list-style-type : none;
-		margin : 0 0 $baselineheight 0;
-		padding : 0;
-	}
-
-	br {
-		display : none;
+		list-style-type: none;
+		margin: 0 0 $baselineheight 0;
+		padding: 0;
 	}
 }
 
-label,
-input,
-button,
-select,
-textarea {
-	font-size: fs(x-small);
-	border-radius: $radius;
-	vertical-align : baseline;
+
+.form-field {
+	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-start;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
 }
 
-input,
-button,
-select,
-textarea {
-	font-family : $basefont;
-	@include box-sizing(border-box);
-}
 
 label {
-	display : inline-block;
-	margin-bottom : $baselineheight/ 8;
-	font-family: fs(x-small);
-	font-weight : bold;
-	color : $textcolor;
-	cursor : pointer;
+	font-size: fs(small);
+	display: inline-block;
+	font-weight: $font-text-bold;
+	color: $color-text;
+	cursor: pointer;
+}
+
+input,
+button,
+select,
+textarea {
+	font-family: $font-text;
+	font-size: fs(normal);
+	border-radius: $radius;
+	vertical-align: baseline;
+	@include box-sizing(border-box);
 }
 
 input,
 textarea,
 select {
-	display : inline-block;
+	display: inline-block;
 	vertical-align: middle;
-	width : 100%;
-	padding : 4px;
-	margin-bottom : $baselineheight;
-	background-color : $inputbackground;
-	border : $inputborderwidth $inputborderstyle $inputborder;
-	color : $textcolor;
-	 -webkit-appearance: none;
-    -moz-appearance: none;
+	width: 100%;
+	padding: $input-padding;
+	background-color: $input-background-color;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: $input-border-width $input-border-style $input-border-color;
+	color: $color-text;
     appearance: none;
 
-	&:hover {
-		border-color : $inputhover;
+	&:focus {
+		outline: none;
 	}
 }
-
-
-// Some fields width variations, add as many as you want or modify them.
-
-.input-small {
-	width : 60px;
-}
-
-.input-medium {
-	width: 150px
-}
-.input-big {
-	width : 300px;
-}
-
-input[type="image"] {
-	width : auto;
-	height : auto;
-	padding : 0;
-	margin : 3px 0;
-	line-height : normal;
-	cursor : pointer;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	width : $gutterwidth / 2;
-	height : $gutterwidth / 2;
-	padding : 0;
-	margin :0 3px 0 0;
-	line-height : normal;
-	cursor : pointer;
-	background-color: $color-white;
-	&:checked {
-		background-color: $inputborder;
-		border-color: $color-white;
-		border-width: 1px;
-		box-shadow: 0 0 0 1px $inputborder;
-	}
-	+ label {
-		margin-right: $gutterwidth;
-	}
-}
-input[type="radio"] {
-	border-radius: 100%;
-}
-
-	label {
-		input[type="checkbox"],
-		input[type="radio"]  {
-			margin-right: $gutterwidth / 4;
-		}
-	}
-
-input[type="image"] {
-	border : 0;
-	@include box-shadow(none);
-}
-
-input[type="file"] {
-	width : auto;
-	padding : initial;
-	line-height : initial;
-	border : initial;
-	background-color : transparent;
-	background-color : initial;
-	@include box-shadow(none);
-}
-
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	width : auto;
-	height : auto;
-	cursor : pointer;
-	*overflow : visible;
-}
-
 
 textarea {
-	@include resize(vertical);
-	height : auto;
-	overflow : auto;
-	vertical-align : top;
+	border: $input-border-width $input-border-style $input-border-color;
+	height: auto;
+	resize: vertical;
+	overflow: auto;
+	vertical-align: top;
 }
 
-input[type="hidden"] {
-	display : none;
+select {
+	appearance: listbox;
+}
+
+input,
+textarea,
+select {
+
+	& + label:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		content: '';
+		display: block;
+		width: 0;
+		height: 2px;
+		background-color: $color-primary;
+		will-change: width;
+		transition: width 0.2s ease-in-out;
+	}
+
+	&:focus + label {
+		color: $color-primary;
+
+		&:before {
+			width: 100%;	
+		}
+	}
 }
 
 
+/** Field help
+****/
+.help {
+	&:after {
+		content: '?';
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1rem;
+		height: 1rem;
+		color: $color-white;
+		background-color: $color-info;
+		border-radius: 100%;
+		line-height: 1;
+	}
 
-// disabled
-
-input[disabled],
-select[disabled],
-textarea[disabled],
-input[readonly],
-select[readonly],
-textarea[readonly] {
-	@include opacity(.5);
-	cursor : not-allowed;
+	&:hover {
+		.help__text {
+			display: block;
+		}
+	}
 }
 
-// focus and active
+.help__text {
+	position: absolute;
+	bottom: 100%;
+	display: none;
+	width: 250px;
+	padding: 0.5em;
+	background-color: $color-info-light;
+	color: $color-info-dark;
+	box-shadow: shadow(middle);
+	font-weight: $font-text-weight;
+	z-index: z(modal);
 
-input:focus,
-textarea:focus {
-	border-color : $inputfocus;
-	box-shadow: 0 0 1px 1px $color-lightgrey;
-	outline: none;
+	&:first-line {
+		font-weight: $font-text-bold;
+	}
 }
 
-::-webkit-input-placeholder {
-	font-size: fs(small);
+
+/** Actions
+****/
+.form__actions {
+	text-align: right;
 }
 
-input:-moz-placeholder {
-	font-size: fs(small);
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+	width: auto;
 }
 
 
@@ -221,10 +191,113 @@ input:-moz-placeholder {
 */
 
 input:required:focus:invalid {
-  	background-color:lighten($color-alert, 5%);
-  	border:1px solid $color-alert;
+	& + label:before {
+		background-color: $color-danger;
+	}
 }
 input:required:focus:valid {
-  	background-color:lighten($color-success, 40%);
-  	border:1px solid $color-success;
+	& + label:before {
+		background-color: $color-success;
+	}
+}
+
+
+/** Checkbox / radio
+****/
+input[type="checkbox"],
+input[type="radio"] {
+	width: $gutter-width / 2;
+	height: $gutter-width / 2;
+	padding: 0;
+	margin :0 3px 0 0;
+	line-height: normal;
+	cursor: pointer;
+	background-color: $color-white;
+	border: $input-border-width $input-border-style $input-border-color;
+
+	&:checked {
+		background-color: $color-primary;
+		border-color: $color-white;
+		border-width: 1px;
+		box-shadow: 0 0 0 1px $input-border-color;
+	}
+
+	+ label {
+		margin-right: $gutter-width;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+input[type="radio"] {
+	border-radius: 100%;
+}
+
+	label {
+		input[type="checkbox"],
+		input[type="radio"]  {
+			margin-right: $gutter-width / 4;
+		}
+	}
+
+
+/** Input placeholder
+****/
+::-webkit-input-placeholder {
+	font-size: fs(small);
+}
+
+input:-moz-placeholder {
+	font-size: fs(small);
+}
+
+/** Input disabled
+****/
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	@include opacity(.5);
+	cursor: not-allowed;
+}
+
+
+/** Input group
+****/
+.input-group {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+
+	label {
+		flex-basis: 100%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		margin-bottom: $baselineheight * -1em;
+	}
+
+	input {
+		order: 1;
+		flex-basis: 70%;
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
+
+	button {
+		order: 2;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	[class^="btn--"], [class*=" btn--"] {
+		margin: 0;
+	}
 }

@@ -1,345 +1,378 @@
-/*------------------------------------*\
-    $SETTINGS
-\*------------------------------------*/
-/**
- *
- * Define all variables and values to use
- *
- */
+/************
+************************ $SETTINGS
+************/
+// Define all variables and values to use
 
 
 
 
 
- /*------------------------------------*\
-    $INCLUDED-COMPONENTS
-\*------------------------------------*/
-/**
- * We can tell the components to use here, `true` for used, `false` unused.
- * Remember you can overwrite this value anywhere else by removing the `!default` property
- */
+/************
+************************ $INCLUDE COMPONENTS
+************/
+/* 
+  We can tell the components to use here, 'true' for used, 'false' unused.
+  Remember you can overwrite this value anywhere else by removing the '!default' property 
+  */ 
 
- // Base components: Usually we include all of this, except in small sites where,
- // let's say, tables.scss won't be used.
- $include-grid:                     true!default;
- $include-debug:                    false!default;
- $include-buttons:                  true!default;
- $include-images:                   true!default;
- $include-utilities:                true!default;
- $include-tables:                   true!default;
- $include-textures:                 true!default;
+// Base
+$include-grid: true !default;
+$include-debug: false !default;
+$include-buttons: true !default;
+$include-images: true !default;
+$include-utilities: true !default;
+$include-tables: true !default;
+$include-textures: true !default;
 
-
-
-
-
- // Components used and created for the current project (or for many projects)
-$include-grids:                   	true!default;
-$include-utilities:                 true!default;
-
-
-
+// Layout - helpers
+$include-margins: true !default;
+$include-paddings: true !default;
+$include-text-alignments: true !default;
+$include-font-sizes: true !default;
 
 // Partials used to create layout: headers, footers, articles, etc...
-$include-site:                   	true!default;
-$include-textures:   	            true!default;
+$include-site: true !default;
+$include-textures: true !default;
+$include-nav-bar: true !default;
+$include-dropmenu: true !default;
 
 
 
 
-
-/*------------------------------------*\
-    $BREAKPOINTS
-\*------------------------------------*/
-/**
- * "Start with the small screen first, then expand until it looks like shit. Time to insert a breakpoint!"
- * Used with mixin `respond-to($breakpoint)`:
-
-.div {
-  color: pink;
-  @include respond-to(medium) {
-    color: maroon;
+/************
+************************ $BREAKPOINTS
+************/
+/*
+  Mobile first.
+  Used with mixin 'respond-to($breakpoint)'
+  
+  Use:
+  .div {
+    color: pink;
+    @include respond-to(medium) {
+      color: maroon;
+    }
   }
-}
- *
- */
+*/
 
 $breakpoints: (
-  'small': 			48em,
-  'medium': 		56.25em,
-  'large': 			68.75em,
+  small: 48em,
+  medium: 56.25em,
+  large: 68.75em,
 ) !default;
 
 
 
 
 
-/*------------------------------------*\
-    $Z-INDEX
-\*------------------------------------*/
-/**
- * We can have control over z-index and not ending up having 900 to infinite.
- * To use this values, we use the `z($layers)` function:
- .element {
-  z-index: z(goku);
- }
- *
- */
+/************
+************************ $Z-INDEX
+************/
+/*
+  We can have control over z-index and not ending up having 900 to infinite
+  Used by z() function.
+
+  Use:
+  .element {
+    z-index: z(modal);
+  }
+*/
 
 $z-layers: (
-  "modal":           9000,
-  "over":             900,
-  "default":            1,
-  "below":             -1,
-  "bottomless-pit": -9000
+  modal: 9000,
+  over: 900,
+  default: 1,
+  below: -1,
+  bottomless-pit: -9000,
 );
 
 
 
 
 
-/*------------------------------------*\
-    $DIR
-\*------------------------------------*/
-/**
- * Sometimes we change image dir from develop to production:
- */
-$image-dir: "../img";
-
- //Use: background-image:url("#{$image-dir}/btn.jpg");
-
- /*
-  * In case we use local fonts (I use them fewer and fewer lately)
+/************
+************************ $DIRECTORIES
+************/
+/*
+  Sometimes we change image dir from develop to production.
   */
 
-$font-dir: "../fonts";
-
-
-
-
-
-
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-/**
- * Constant layout values, apart from these we can also declare values
- * for different blocks sizes and more.
- */
-$baselineheight:     1.5;
-$gutterwidth:        24px;
-$padding:            $gutterwidth;
-$minigutter:         $gutterwidth / 2;
-$pagemaxwidth:       1024px;
-$radius:             3px;
-$hovertransition:    .3s;
-$animationtime:      .8s;
-
-
-
-
-/*------------------------------------*\
-    $GRID
-\*------------------------------------*/
-/**
- * These are the variables we use for our Grid
- */
-$gap : $minigutter;
-$grid-size: 12;
-
-
-
-
-/*------------------------------------*\
-    $FONT-FACE
-\*------------------------------------*/
-/**
- * Fonts definitions
- */
-$basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
-$altfont : Georgia, Times, "Times New Roman";
-$codefont : "Courier New", monospace;
-$baseheadingfont : $altfont;
-
-$baseheadingfontweight : normal;
-$baseheadingfontcolor : inherit;
-
-$basefontsize   :   16;
-
+$dir-image: "../images";
+$dir-font: "../fonts";
 
 /*
- * Font Size variables are defined in a Scss MAP, this MAP will create
- * a class (in `utilities.scss`) for every size with the value in REM units, you can check
- * `utilities.scss` if you need to change the loop:
-
-  .x-small { font-size: .8rem}
-
- * We also have a function to assign font sizes, call `fs`:
-
-    .selector { font-size: fs(x-small);}
-
- *
- */
-$size-vars: (
-  "x-small"  :    .6,
-  "small"    :    .8,
-  "normal"   :    1,
-  "big"      :    1.5,
-  "huge"     :    2
-);
-
-
-
-
-/*------------------------------------*\
-    $COLORS
-\*------------------------------------*/
-/**
- * Brand colors
- */
- $color-brand:          #007EE5;
- $color-secondary:      #DACC3E;
- $color-cta:             #7CB920;
+  Use:
+  background-image:url("#{$dir-image}/btn.jpg");
+*/
 
 
 
 
 
- /**
- * Grey Scale
- * This is mainly to hold back designers from adding 200 different greys ;)
- */
- $color-black:                rgb(0,0,0);
- $color-darkergrey:             lighten(black, 10%);
- $color-darkgrey:               lighten(black, 20%);
- $color-grey:                   lighten(black, 30%);
- $color-lightgrey:              lighten(black, 75%);
- $color-lightergrey:            lighten(black, 95%);
- $color-white:                  rgb(255,255,255);
+/************
+************************ $FONT FACE
+************/
 
- /**
- * Colors Map
- * We may also need a map with all these colors, to create classes.
- */
- $colors-map: (
-     color-brand:          			$color-brand,
-     color-secondary:      			$color-secondary,
-     color-black:                	$color-black,
-     color-darkergrey:             	$color-darkergrey,
-     color-darkgrey:               $color-darkgrey,
-     color-grey:                   	$color-grey,
-     color-lightgrey:              	$color-lightgrey,
-     color-lightergrey:            	$color-lightergrey,
-     color-white:                  $color-white
- );
+$font-text: "Open Sans", Arial, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-heading: "Merriweather", Georgia, Times, "Times New Roman";
+$font-code: "Courier New", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
-
-// Atmosphere
-$background: 		$color-white;
-$headingcolor:      lighten(black, 20%);
-$textcolor: 		lighten(black, 30%);
-$color-border    :   $color-lightergrey;
+$font-size: 16px;
+$font-text-weight: 400;
+$font-text-bold: 600;
+$font-heading-weight: 400;
 
 
 
 
 
 
-// Links
-$linkcolor 		    : color-brand(color-brand);
-$linkcolorhover 	: $linkcolor;
-$linkcolorvisited   : $linkcolor;
-$linkcolorfocus 	: $linkcolor;
+/************
+************************ $LAYOUT
+************/
+/*
+  Constant layout values, apart from these we can also declare values
+  for different blocks sizes and more.
+  */
+$baselineheight: 1.5;
+$gutter-width: 24px;
+$padding: $gutter-width;
+$page-max-width: 1024px;
+$radius: 0px;
+$transition-hover: .2s;
+$animationtime: .8s;
+$margin-bottom: 1em;
+
+
+
+/************
+************************ $GRID
+************/
+/*
+  These are the variables we use for our Grid
+  */
+$grid-gap: 0.5em;
+$grid-size: 6;
 
 
 
 
 
+/************
+************************ $COLORS
+************/
 
-/*------------------------------------*\
-    $TEXTURAS
-\*------------------------------------*/
-/**
- * Definimos Colores y elementos de popups, mensajes de alerta, etc...
- */
-$color-alert 	: rgb(252,228,207);
-$color-error 	: rgb(218,79,73);
-$color-info 	: rgb(66, 184, 221);
-$color-success 	: rgb(91,183,91);
-$color-warning 	: rgb(231,135,48);
+/** Brand colors
+****/
+$color-primary: #015668;
+$color-primary-light: lighten($color-primary, 5%);
+$color-primary-dark: darken($color-primary, 5%);
+
+$color-secondary: #263f44;
+$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-dark: darken($color-secondary, 5%);
+
+$color-accent: #ffd369;
+$color-accent-light: lighten($color-accent, 5%);
+$color-accent-dark: darken($color-accent, 10%);
 
 
-// Texturas de popups
-$alertbordercolor	: darken($color-alert, 20%);
-$alertborderwidth 	: 1px;
-$alertborderstyle 	: solid;
-$alerttext			: darken($color-alert, 60%);
+/** Gray scale
+****/
+$color-black: #222222;
+$color-darkergrey: lighten(black, 10%);
+$color-darkgrey: lighten(black, 25%);
+$color-grey: lighten(black, 55%);
+$color-lightgrey: lighten(black, 93%);
+$color-lightergrey: lighten(black, 98%);
+$color-white: #ffffff;
 
-// Error
-$alerterrorcolor 	: lighten($color-error, 30%);
-$alerterrorborder  	: lighten($color-error, 20%);
-$alerterrortext 	: $color-error;
+
+/** Atmosphere
+****/
+$color-background: $color-lightergrey;
+$color-heading: lighten(black, 20%);
+$color-text: lighten(black, 30%);
+$color-border: $color-lightgrey;
+
+
+/** Links
+****/
+$link-color: $color-primary;
+$link-color-hover: $link-color;
+$link-color-visited: $link-color;
+$link-color-focus: $link-color;
+
+
+/** Third party colors (http://brandcolors.net)
+****/
+$color-facebook: #3b5998;
+$color-twitter: #55acee;
+$color-linkedin: #0077b5;
+$color-googleplus: #dd4b39;
+$color-rss: #f26522;
+$color-youtube: #cd201f;
+$color-whatsapp: #25d366;
+$color-instagram: #e1306c;
+
+
+
+
+/************
+************************ $TEXTURES
+************/
+/*
+  Definimos Colores y elementos de popups, mensajes de alerta, etc...
+  */
+
 
 // Info
-$alertinfocolor 	: lighten($color-info, 10%);
-$alertinfoborder  	: darken($color-info, 10%);
-$alertinfotext 		: darken($color-info, 50%);
-
-
+$color-info: #42a5f5;
+$color-info-light: lighten($color-info, 10%);
+$color-info-dark: darken($color-info, 60%);
 // Success
-$alertsuccesscolor 	: lighten($color-success, 30%);
-$alertsuccessborder : lighten($color-success, 20%);
-$alertsuccesstext 	: darken($color-success, 20%);
+$color-success: #66bb6a;
+$color-success-light: lighten($color-success, 7%);
+$color-success-dark: darken($color-success, 50%);
+// Warning
+$color-warning: #ffa726; 
+$color-warning-light: lighten($color-warning, 13%);
+$color-warning-dark: darken($color-warning, 50%);
+// Danger
+$color-danger: #ef5350;
+$color-danger-light: lighten($color-danger, 10%);
+$color-danger-dark: darken($color-danger, 50%);
+// Alerta base
+$alert-background-color: $color-warning;
+$alert-border-width: 0px;
+$alert-border-style: solid;
+$alert-border-color: darken($color-warning, 20%);
+$alert-text-color: $color-warning-dark;
 
-// Advertencia
-$alertwarningcolor 	: lighten($color-warning, 30%);
-$alertwarningborder : lighten($color-warning, 20%);
-$alertwarningtext 	: darken($color-warning, 20%);
+
+// Botones
+$button-color: $color-white;
+$button-background: $color-primary;
+$button-border-color: currentcolor;
+$button-border-width: 0px;
+$button-border-style: solid;
 
 
+// Tablas
+$table-background: transparent;
+$table-stripe: $color-lightergrey;
+$table-hover: $color-lightergrey;
+$table-border: $color-grey;
+$table-border-width: 1px;
+$table-border-style: solid;
 
-// badges
-$badgebackground    : transparent;
-$badgecolor         : $textcolor;
-
-// botones
-$buttonbackground   : transparent;
-$buttonbordercolor  : currentcolor;
-$buttoncolor        : $textcolor;
-$buttonborderwidth  : 1px;
-$buttonborderstyle  : solid;
-
-// boxes (well)
-$wellbackground     : red;
-$wellbordercolor    : darken($wellbackground, 20%);
-$wellborderwidth    : 1px;
-$wellborderstyle    : solid;
-$wellshadow         : darken($wellbackground, 10%);
-$wellshadowblur     : 10px;
-
-// tablas
-$tablebackground    : transparent;
-$tablestripe        : $color-lightergrey;
-$tablehover         : $color-lightergrey;
-$tableborder        : $color-grey;
-$tableborderwidth   : 1px;
-$tableborderstyle   : solid;
-
-// formularios
-$inputbackground    : $color-white;
-$inputborder        : $color-lightgrey;
-$inputborderwidth   : 1px;
-$inputborderstyle   : solid;
-$inputhover         : lighten($color-black, 50%);
-$inputfocus         : $color-brand, 40%;
-$placeholdercolor   : $color-lightergrey;
+// Formularios
+$input-background-color: $color-white;
+$input-border-width: 1px;
+$input-border-color: $color-grey;
+$input-border-style: solid;
+$input-hover: lighten($color-black, 50%);
+$input-focus: $color-primary, 40%;
+$input-padding: 4px;
 
 
 // Navegación
-$nav-width:               42px;
-$nav-height:              $nav-width;
-$nav-icon-size:           16px;
-$nav-color:               $color-brand;
-$nav-background:          $color-white;
-$nav-borders:             lighten($nav-background, 10%);
-$nav-lists-background:    $color-brand;
+$nav-lineheight: 50px;
+$nav-width: 42px;
+$nav-height: $nav-width;
+$nav-icon-size: 16px;
+$nav-color: $color-primary;
+$nav-background: $color-white;
+$nav-borders: lighten($nav-background, 10%);
+$nav-lists-background: $color-primary;
+
+
+
+
+
+/************
+************************ $LISTS
+************/
+
+/*
+  Used to generate helper classes: margin, padding, etc.
+  */
+$helper-values: (1 2 3 4 5 6 7 8 9 10);
+
+
+
+
+
+/************
+************************ $MAPS
+************/
+
+
+/*
+  Used by fs() function and font-size helper.
+
+  Use:
+  .selector { font-size: fs(small);}
+*/
+$font-sizes: (
+	tiny: 0.6,
+	small: 0.8,
+	normal: 1,
+	large: 1.3,
+	big: 1.8,
+	huge: 2.5,
+);
+
+/** Shadow elevations
+****/
+/*
+  Used by shadow() function
+
+  Use:
+  .selector { box-shadow: shadow(low); }
+*/
+$shadow-elevations: (
+  default: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
+  low: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+  middle: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
+  modal: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
+  dialog: "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)",
+);
+
+
+/** Brand colors
+****/
+$brands-colors: (
+  facebook: $color-facebook,
+  twitter: $color-twitter,
+  linkedin: $color-linkedin,
+  googleplus: $color-googleplus,
+  youtube: $color-youtube,
+  whatsapp: $color-whatsapp,
+  rss: $color-rss,
+  instagram: $color-instagram
+);
+
+
+/** Margins
+****/
+// propiedad: prefijo de clase
+$margenes: (
+  "margin": mg,
+  "margin-top": mt,
+  "margin-right": mr,
+  "margin-bottom": mb,
+  "margin-left": ml
+);
+
+
+/** Paddings
+****/
+// propiedad: prefijo de clase
+$rellenos: (
+  "padding": pd,
+  "padding-top": pt,
+  "padding-right": pr,
+  "padding-bottom": pb,
+  "padding-left": pl
+);

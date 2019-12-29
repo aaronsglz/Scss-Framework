@@ -2,40 +2,31 @@
 
 
 
-/*------------------------------------*\
-    $PARTIALS
-\*------------------------------------*/
-/**
- * All files to be compiled
- */
+/************
+************************ $PARTIALS
+************/
+// All files to be compiled
 
-/**
-* Scss Libraries, mixins, functions and any Scss focused logic
-**/
+
+// Scss Libraries, mixins, functions and any Scss focused logic
 @import "lib/settings";
 @import "lib/mixins";
+@import "lib/placeholders";
 @import "lib/functions";
 @import "lib/debug";
 
 
-
-
-
-/**
-* Base
-**/
+// Base
 @import "lib/index";
 @import "lib/reset";
 @import "lib/debug";
 
 
+// Vendors
+@import 'layout/vendors/font-awesome';
 
 
-
-/**
-* HTML elements
-**/
-@import "base/figures";
+// HTML elements
 @import "base/forms";
 @import "base/buttons";
 @import "base/images";
@@ -44,22 +35,19 @@
 @import "base/tables";
 
 
+// Components
+@import "components/grid";
+@import 'components/dropmenu';
+@import 'components/nav-bar';
 
 
+// Helpers
+@import 'layout/helpers/font-size';
+@import 'layout/helpers/margin';
+@import 'layout/helpers/padding';
+@import 'layout/helpers/text-align';
 
-/**
-* Layout and general styles
-**/
+// Layout and general styles
 @import "layout/site";
 @import "layout/textures";
 
-
-
-
-
-/**
-* Componets used for layouts, headers, articles, etc...
-**/
-@import "components/grid";
-
-@import "components/utilities"; // always last file to import

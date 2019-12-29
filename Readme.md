@@ -15,7 +15,6 @@ vea afectado por acciones como el ZOOM. Para más info leer a
 
 ```scss
 $breakpoints: (
-
   'small'  : 48em,
   'medium' : 56.25em,
   'large'  : 68.75em,
@@ -56,34 +55,47 @@ Los archivos de **SCSS** están todos dentro de la carpeta `scss` y distribuidos
 de la siguiente manera:
 
 ```
---scss
-		style.scss
-        -abstracciones
-                     _botones.scss
-                     _fonticon.scss
-                     _grid.scss
-                     _paginacion.scss
-                     _texturas.scss
-        --base
-                     _contenido.scss
-                     _reset.scss
-                     _debug.scss
-		--elementos
-                     _figure.scss
-                     _formulario.scss
-                     _imagenes.scss
-                     _links.scss
-                     _reset.scss
-                     _tipografia.scss
-                     _tablas.scss
-        --layout
-        			_navegacion.scss
-                    _sitio.scss
-        --lib
-                    _flex.scss
-        			_mixins.scss
-        			_placeholders.scss
-        			_settings.scss
+scss
+    _partials.scss
+    style.scss
+    styleguide.scss
+
+    base
+        _buttons.scss
+        _forms.scss
+        _images.scss
+        _links.scss
+        _tables.scss
+        _typography.scss
+
+    components
+        _dropmenu.scss
+        _grid.scss
+        _nav-bar.scss
+
+    layout
+        _site.scss
+        _textures.scss
+        helpers
+            _font-size.scss
+            _margin.scss
+            _padding.scss
+            _text-align.scss
+        vendors
+            _font-awesome.scss
+            _prism.scss
+
+    lib
+        _debug.scss
+        _functions.scss
+        _index.scss
+        _mixins.scss
+        _placeholders.scss
+        _reset.scss
+        _settings.scss
+
+    styleguide
+        _miscellaneous.scss
 ```
 
 El archivo `contenido.scss` se compila al principio del `style.css` para dar una
@@ -96,64 +108,3 @@ A su vez están todas las secciones separadas unas de las otras para ubicar ráp
 
 El archivo `_debug.scss` lo usamos para tener una
 pequeña guía de la semántica de tu documento html.
-
-
-### Codekit
-Iré adaptándolo a Codekit pero sin que afecte a los que no lo usan. De momento si
-usas Codekit, incluyo el archivo `config.codekit`y todos los `.scss`son compilados
-en la carpeta `css`.
-
-### Gulp
-Una alternativa a Codekit y que además permite su uso en otros sistemas operativos es Gulp.
-
-#### Instalación
-Se necesita tener instalado Nodejs (https://nodejs.org/en/) y Gulp:
-`npm install gulp -g`
-
-Una vez instalados los requisitos anteriores se ejecuta:
-`npm install`
-en el raíz del proyecto. Esto instalará todas las dependencias para que Gulp pueda compilar Sass.
-
-#### Actualizar dependencias
-
-Las dependencias están continuamente actualizándose, una buen método para automatizar esta tarea es utilizar ```npm-check-updates```
-
-```sh
-npm install -g npm-check-updates
-```
-
-Ahora ejecutamos en el terminal el siguiente comando para actualizar todas las dependencias.
-
-```sh
-ncu
-```
-
-El terminal nos informará de las dependencias que se han actualizado.
-
-```sh
-autoprefixer     ^6.0.3  →  ^6.1.2
-gulp-minify-css  ^1.2.1  →  ^1.2.2
-```
-
-#### Configuración y uso
-Para configurar gulp podéis entrar a `gulpfile.js` y modificar el json de configuración (primeras líneas):
-```
-config = {
-  autoprefixer : true, //Prefijos de navegadores para CSS: compatibilidad con browsers
-  minify : true, // Minificado de CSS
-  mergeMediaQueries: true, // Unimos el interior de las mediaQueries con las misma condición
-  paths : {
-    ...
-  }
-}
-```
-**Tarea autoprefixer** (true o false): tras compilar el `.scss` añade prefijos de navegadores para mejorar la compatibilidad con estos.
-**Tarea minify** (true o false): tras compilar el `.scss`, minificamos el css, borrando todos los espacios innecesarios y comentarios.
-**Tarea mergeMediaQueries** (true o false): tras compilar el `.scss`, unificamos todas las mediaqueries con la misma condición, lo cual es perfecto para combinar con el mixing `respond-to()`.
-
-Nota: todas las tareas se pueden combinar como se desee.
-
-Para hacer que gulp compile nuestro `.scss` debemos escribir `gulp` en consola.
-
-## Patrones
-Lo trabajaré en otra rama, ya que ahora mismo no provee ninguna ventaja.

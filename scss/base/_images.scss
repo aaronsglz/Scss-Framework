@@ -1,28 +1,26 @@
-
-
-
-
-
-/*------------------------------------*\
-    $IMÁGENES
-\*------------------------------------*/
-
 @if $include-images == true {
+  
+  
 
 
-.img--rounded {
-  border-radius :$radius * 4;
-}
 
-.img--polaroid {
-  padding : $gutterwidth / 2;
-  background-color : $color-white;
-  border : 1px solid $color-border;
-  box-shadow : 0 1px 3px rgba(0,0,0,.1);
-}
+  /************
+  ************************ $IMAGES
+  ************/
 
-.img--circle {
-  border-radius : 100%;
-}
-
+  .img--rounded {
+    border-radius: 1em;
+  }
+  
+  .img--polaroid {
+    padding: $gutter-width/2 $gutter-width/2 $gutter-width*2 $gutter-width/2;
+    background-color: $color-white;
+    border: 1px solid $color-lightgrey;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  }
+  
+  .img--circle {
+    border-radius: 100%;
+  }
+  
 } //endif

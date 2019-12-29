@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Readme</title>
+</head>
+<body>
+    <h1 id="wakkos-sass-framework">Wakkos SASS framework</h1>
+    <h3 id="configuración">Configuración:</h3>
+    <h4 id="settings.scss">settings.scss</h4>
+    <p>Configura primeramente el archivo <code>lib/settings.scss</code>.</p>
+    <p>Pasa a configurar las variables y diferentes opciones de la atmósfera de diseño, donde podremos configurar colores, fuentes, tamaños, etc...</p>
+    <h3 id="breakpoints">Breakpoints</h3>
+    <p>Los breakpoints los he colocado en EM en vez de pixels para que el diseño no se vea afectado por acciones como el ZOOM. Para más info leer a <a href="http://css-tricks.com/why-ems/">Chris Coyer</a> y a <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">Lyza Gardner</a> con argumentos al respecto.</p>
+    <pre class="scss"><code>$breakpoints: (
+    &#39;small&#39;  : 48em,
+    &#39;medium&#39; : 56.25em,
+    &#39;large&#39;  : 68.75em,
+
+    ) !default;</code></pre>
+    <h3 id="nomenclatura">Nomenclatura</h3>
+    <p>La convención de nombre sigue este patrón:</p>
+    <pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.bloque</span><span class="kw">{}</span>
+        <span class="fl">.bloque__elemento</span><span class="kw">{}</span>
+        <span class="fl">.bloque--modificador</span><span class="kw">{}</span></code></pre>
+    <ul>
+    <li>'.bloque' representa el primer nivel de una abstracción o componente.</li>
+    <li>'.bloque__elemento' representa un descendente de '.bloque' que se ayuda de '.bloque' como un conjunto.</li>
+    <li>'.bloque--modificador' representa un estado diferente de '.bloque'.</li>
+    </ul>
+    <p>Una <strong>analogía</strong> del funcionamiento de las clases BEM sería:</p>
+    <pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.persona</span><span class="kw">{}</span>
+        <span class="fl">.persona--mujer</span><span class="kw">{}</span>
+            <span class="fl">.persona__mano</span><span class="kw">{}</span>
+            <span class="fl">.persona__mano--izquierda</span><span class="kw">{}</span>
+            <span class="fl">.persona__mano--derecha</span><span class="kw">{}</span></code></pre>
+    <p>Para más info podéis leer mi traducción de la <a href="https://github.com/Wakkos/CSS-Guidelines">guía de CSS</a> de <a href="https://twitter.com/csswizardry">Harry Roberts</a> a la cual me he ajustado en su mayoría para crear este framework.</p>
+    <p>También tenemos espacio entre secciones para que sea fácil de ubicar al ver el archivo compilado <code>style.css</code>.</p>
+    <h3 id="organización">Organización</h3>
+    <p>Los archivos de <strong>SCSS</strong> están todos dentro de la carpeta <code>scss</code> y distribuidos de la siguiente manera:</p>
+    <pre><code>scss
+        _partials.scss
+        style.scss
+        styleguide.scss
+
+        base
+            _buttons.scss
+            _forms.scss
+            _images.scss
+            _links.scss
+            _tables.scss
+            _typography.scss
+
+        components
+            _dropmenu.scss
+            _grid.scss
+            _nav-bar.scss
+
+        layout
+            _site.scss
+            _textures.scss
+            helpers
+                _font-size.scss
+                _margin.scss
+                _padding.scss
+                _text-align.scss
+            vendors
+                _font-awesome.scss
+                _prism.scss
+
+        lib
+            _debug.scss
+            _functions.scss
+            _index.scss
+            _mixins.scss
+            _placeholders.scss
+            _reset.scss
+            _settings.scss
+
+        styleguide
+            _miscellaneous.scss</code></pre>
+    <p>El archivo <code>contenido.scss</code> se compila al principio del <code>style.css</code> para dar una guía de donde tenemos nuestros elementos y su nombre, gracias a los comentarios BEM na búsqueda <code>cmd/ctrl + f</code> en nuestro editor que empiece por $NOMBREDESECCION nos ayudará mucho a encontrar el contenido.</p>
+    <p>A su vez están todas las secciones separadas unas de las otras para ubicar rápidamente cuando echamos un vistazo.</p>
+    <p>El archivo <code>_debug.scss</code> lo usamos para tener una pequeña guía de la semántica de tu documento html.</p>
+
+</body>
+</html>

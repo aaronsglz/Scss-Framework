@@ -1,0 +1,87 @@
+@if $include-dropmenu == true {
+	
+	
+	
+	
+
+	/************
+	************************ $DROPMENU
+	************/
+	
+	.dropmenu {
+		position: relative;
+	}
+	
+	.dropmenu__backdrop {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		z-index: z(over);
+	}
+	
+	.dropmenu__list {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: auto;
+		z-index: z(over);
+		min-width: 200px;
+		margin-top: 0;
+		margin-left: 0;
+		padding: 0.5em;
+		list-style: none;
+		border: none;
+		border-radius: 0;
+		font-size: fs(normal);
+		box-shadow: shadow(default);
+		background-color: $color-white;
+		opacity: 0;
+		
+		
+		.dropmenu--open & {
+			display: block;
+			opacity: 1;
+		}
+	}
+	
+	.dropmenu__list--left {
+		left: auto;
+		right: 1em;
+	}
+	
+	.dropmenu__item {
+		list-style: none;
+	}
+	
+	.dropmenu__link {
+		display: block;
+		padding: 0.3em 1em;
+		color: $color-primary;
+		
+		&:visited {
+			color: $color-primary;
+		}
+		
+		&:hover,
+		&:focus {
+			background-color: transparentize($color-lightgrey, 0.8);
+			cursor: pointer;
+			text-decoration: none;
+			outline: none;
+		}
+	}
+	
+	.dropmenu__link--disabled {
+		color: $color-lightgrey;
+		
+		&:hover,
+		&:focus {
+			cursor: default;
+			background-color: transparent;
+		}
+	}
+	
+} // end if

@@ -1,50 +1,48 @@
-/*------------------------------------*\
-    $FUNCTIONS
-\*------------------------------------*/
-
+/************
+************************ $FUNCTIONS
+************/
 
 
 
 /*
- * Function to control Index values
+  Función para controlar el z-index (mapa definido en settinsg.scss)
 
- 	.selector { z-index: z(goku);}
-
- * Compiles to:
-
-	.selector { z-index: 9001;}
-
- * You can see the current values and variables in settings.scss
- */
-
+  Use:
+  .selector { z-index: z(modal); }
+    
+  Result:
+  .selector { z-index: 9000; }
+    
+*/
 @function z($layer) {
   @return map-get($z-layers, $layer);
 }
 
 
+
 /*
- * Function to keep font size consistent
+  Función para mantener el tamaño de fuente consistente.
 
- .selector { font-size: fs(x-small);}
-
- * You can see the current values and variables in settings.scss
- */
-
-@function fs($font-size) {
-  @return map-get($size-vars, $font-size) * 1rem;
+  Use:
+   .selector { font-size: fs(small); }
+  
+  Result:
+  .selector { font-size: 0.6rem; }
+*/
+@function fs($size) {
+	@return map-get($font-sizes, $size) * 1rem;
 }
 
 
 
 /*
- * Function to use colors in our Scss
+  Función para mantener el sombreado de forma consistente.
 
- .selector { font-size: fs(x-small);}
+  Use:
+  .selector { box-shadow: shadow(modal); }
+  
+*/
 
- * You can see the current values and variables in settings.scss
- */
-@function color($color) {
-  @return map-get($colors, $color);
+@function shadow($depth) {
+	@return #{map-get($shadow-elevations, $depth)};
 }
-
-

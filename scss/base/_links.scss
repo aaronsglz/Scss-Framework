@@ -3,29 +3,29 @@
 
 
 
-/*------------------------------------*\
-    $LINKS
-\*------------------------------------*/
+/************
+************************ $LINKS
+************/
 a {
-	text-decoration : none;
-	color : $linkcolor;
+	text-decoration: none;
+	color: $link-color;
 
 	&:visited {
-		color : $linkcolorvisited;
+		color: $link-color-visited;
 	}
 
 	&:hover {
-		text-decoration : underline;
-		color : $linkcolorhover;
+		text-decoration: underline;
+		color: $link-color-hover;
 	}
 
 	&:focus {
-		outline : thin dotted;
-		color : $linkcolorfocus;
+		outline: thin dotted;
+		color: $link-color-focus;
 	}
 
 	&:hover,
 	&:active {
-		outline : 0;
+		outline: 0;
 	}
 }

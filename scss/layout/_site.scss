@@ -3,52 +3,51 @@
 
 
 
-/*------------------------------------*\
-    $SITIO
-\*------------------------------------*/
+/************
+************************ $SITE
+************/
 
 
 @-webkit-viewport {
-	width : device-width;
+	width: device-width;
 }
 
 @-moz-viewport {
-	width : device-width;
+	width: device-width;
 }
 
 @-ms-viewport {
-	width : device-width;
+	width: device-width;
 }
 
 @-o-viewport {
-	width : device-width;
+	width: device-width;
 }
 
 @viewport {
-	width : device-width;
+	width: device-width;
 }
 
 html {
-	background : $background;
-	font-size : 87.5%;
-	-webkit-overflow-scrolling : touch;
-	-webkit-tap-highlight-color : transparent;
-	-webkit-text-size-adjust : 100%;
-	-ms-text-size-adjust : 100%;
+	background: $color-background;
+	font-size: fs(normal);
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
-	margin : 0;
-	padding : 0;
-	width : 100%;
-	background-color : transparent;
-	font-family : $basefont;
-	line-height : $baselineheight;
-	color : $textcolor;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: transparent;
+	font-family: $font-text;
+	line-height: $baselineheight;
+	color: $color-text;
 }
 
 /**
 * A partir de aquí es donde debes escribir los estilos de posicionamiento
 * y detalles que forman tu web. Disfruta!
 */
-

@@ -1,0 +1,201 @@
+﻿<div class="page  page--texturas">
+
+    <!-- SOMBRAS -->
+    <section class="page-section  section">
+        <h3 class="section__title">Sombras</h3>
+        <div class="section__body">
+            <p>
+                Actualmente no hay clases definidas para aplicar estas sombras. Sólo están disponibles a través de la función shadow().
+            </p>
+            <p>
+                Los niveles disponibles son los siguientes:
+            </p>
+            <ul>
+                <li>default</li>
+                <li>low</li>
+                <li>middle</li>
+                <li>modal</li>
+                <li>dialog</li>
+            </ul>
+<pre><code class="language-css">.selector {
+    box-shadow: shadow(low);
+}</code></pre>
+    
+            <div class="shadow-default">Default</div>
+            <div class="shadow-low">Low</div>
+            <div class="shadow-middle">Middle</div>
+            <div class="shadow-modal">Modal</div>
+            <div class="shadow-dialog">Dialog</div>
+        </div>
+    </section>
+
+
+
+    <!-- ALERTAS -->
+    <section class="page-section  section">
+        <h3 class="section__title">Alertas</h3>
+        <div class="section__body">
+            <p>
+                Componente bloque donde definimos las propiedades de nuestros mensajes de alerta. Todos los mensajes de alerta heredan del bloque <code>%alert</code> y después se añaden los modificadores <code>.alert--info</code>.
+            </p>
+    
+<pre><code class="language-css">%alert {
+    position: relative;
+    margin: 0.5em 0;
+    padding: 0.5em 1em 0.5em 1em;
+    border: $alert-border-width $alert-border-style $alert-border-color;
+    background-color: $alert-background-color;
+    font-family: $font-text;
+    font-size: fs(normal);
+    color: $alert-text-color;
+    border-radius: $radius;
+    box-shadow: shadow(default);
+    
+    .alert__heading {
+        margin-bottom: $baselineheight / 8;
+        font-size: inherit;
+        font-weight: bold;
+        color: inherit;
+    }
+    
+    .close {
+        position: absolute;
+        top: -2px;
+        right: 2px;
+        float: right;
+        font-size: fs(small);
+        font-weight: bold;
+        line-height: 18px;
+        color: inherit;
+    }
+    
+    p,
+    ol,
+    ul,
+    dl {
+        margin-bottom: 0;
+    }
+
+    p + p {
+        margin-top: 5px;
+    }
+}</code></pre>
+    
+    
+            <div class="alert">
+                <span class="alert__heading">Atención</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.</p>
+            </div>
+
+<pre><code class="language-html">&lt;div class="alert"&gt;
+    &lt;span class="alert__heading"&gt;Atención&lt;/span&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+
+
+            <div class="alert  alert--info">
+                <span class="alert__heading">Info</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.</p>
+            </div>
+                
+    
+<pre><code class="language-html">&lt;div class="alert  alert--info"&gt;
+    &lt;span class="alert__heading"&gt;Info&lt;/span&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    
+    
+            <div class="alert  alert--success">
+                <span class="alert__heading">Success</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.</p>
+            </div>
+    
+<pre><code class="language-html">&lt;div class="alert  alert--success"&gt;
+    &lt;span class="alert__heading"&gt;Success&lt;/span&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    
+    
+            <div class="alert  alert--warning">
+                <span class="alert__heading">Warning</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.</p>
+            </div>
+    
+<pre><code class="language-html">&lt;div class="alert  alert--warning"&gt;
+    &lt;span class="alert__heading"&gt;Warning&lt;/span&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    
+    
+            <div class="alert  alert--danger">
+                <span class="alert__heading">Danger</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.</p>
+            </div>
+    
+<pre><code class="language-html">&lt;div class="alert  alert--danger"&gt;
+    &lt;span class="alert__heading"&gt;Danger&lt;/span&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo molestias non, autem facilis corporis.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- TEXTOS DE ALERTA -->
+    <section class="page-section  section">
+        <h3 class="section__title">Textos de alerta</h3>
+        <div class="section__body">
+            <p>
+                En principio sólo debería usarse en formularios para recordar al usuario que debe rellenar un campo obligatorio o como mensajes de validación de algún campo.
+            </p>
+
+            <span class="text-alert--info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            <pre><code class="language-html">&lt;span class="text-alert--info"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/span&gt;</code></pre>
+
+            <span class="text-alert--success">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            <pre><code class="language-html">&lt;span class="text-alert--success"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/span&gt;</code></pre>
+
+            <span class="text-alert--warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            <pre><code class="language-html">&lt;span class="text-alert--warning"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/span&gt;</code></pre>
+
+            <span class="text-alert--danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            <pre><code class="language-html">&lt;span class="text-alert--error"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/span&gt;</code></pre>
+        </div>
+    </section>
+
+
+
+    <!-- DIALOGOS -->
+    <section class="page-section section">
+        <h3 class="section__title">Diálogos</h3>
+        <div class="section__body">
+            <div class="dialog-wrapper">
+                <div class="dialog">
+                    <div class="dialog__message">
+                        ¿Está seguro de que desea eliminar este elemento?
+                        </div>
+                        <div class="dialog__actions">
+                            <button type="button" class="btn--secondary">Cancelar</a>
+                            <button type="button" class="btn--primary">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+    
+<pre><code class="language-html">&lt;div class="dialog"&gt;
+    &lt;div class="dialog__message"&gt;
+        ¿Está seguro de que desea eliminar este elemento?
+    &lt;/div&gt;
+    &lt;div class="dialog__actions"&gt;
+        &lt;button type="button" class="btn--secondary"&gt;Cancelar&lt;/button&gt;
+        &lt;button type="button" class="btn--primary"&gt;Eliminar&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        </div>
+    </section>
+
+</div>

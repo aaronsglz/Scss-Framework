@@ -1,0 +1,16 @@
+@if $include-font-sizes == true {
+
+    
+    
+
+    /************
+    ************************ $FONT SIZE HELPERS
+    ************/
+
+    @each $name, $value in $font-sizes {
+        .font-#{$name} {
+            font-size: $value * 1rem;
+            line-height: 1.5;
+        }
+    }
+}

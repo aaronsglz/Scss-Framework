@@ -1,0 +1,25 @@
+@if $include-text-alignments == true {
+
+    
+
+    
+    /************
+    ************************ $TEXT ALIGNMENT HELPERS
+    ************/
+
+    .text-left {
+        text-align: left;
+    }
+    
+    .text-right {
+        text-align: right;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .text-justify {
+        text-align: justify;
+    }
+}

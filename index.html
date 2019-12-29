@@ -1,71 +1,96 @@
 <!doctype html>
-<!-- HTML5 Boilerplate -->
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>A SCSS Framework based on Wakkos Framework</title>
+    
+    <!-- Iconos -->
+    <!-- 16x16 -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- 32x32 -->
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <!-- CSS Para todos los navegadores -->
+    <link rel="stylesheet" href="css/styleguide.css">
 
-<title>A Wakkos SASS Framework</title>
-
-<!-- http://bit.ly/18VB51x -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-
-<!-- CSS Para todos los navegadores -->
-<link rel="stylesheet" href="css/style.css">
-
-<!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="css/lt-ie9.css">
-<![endif]-->
-
-
-<!-- Iconos -->
-
-<!-- 16x16 -->
-<link rel="shortcut icon" href="/favicon.ico">
-<!-- 32x32 -->
-<link rel="shortcut icon" href="/favicon.png">
-<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png">
-<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
-
-<!--iOS -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Windows 8 / RT http://bit.ly/HHkt7m -->
-<meta name="msapplication-TileImage" content="img/apple-touch-icon-144x144-precomposed.png">
-<meta name="msapplication-TileColor" content="#000">
-<meta http-equiv="cleartype" content="on">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<h1 class="h1">Wakkos Sass framework</h1>
-Añade tu HTML
+
+    <header class="page-header  js-page-header">
+        <nav class="site-nav">
+            <a href="styleguides/color-palette.html" class="site-nav__home  js-nav">
+                <img src="/styleguides/images/logo.png" alt="StyleGuide" class="site-nav__logo">
+            </a>
+            
+            <ul class="site-nav__list">
+                <li class="site-nav__item  dropmenu">
+                    <a href="#" class="site-nav__link" data-toggle="dropmenu">
+                        StylesGuide <em class="fa-chevron-down"></em>
+                    </a>
+
+                    <ul class="dropmenu__list">
+                        <li>
+                            <a class="js-nav" href="styleguides/color-palette.html">Color palette</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/grid.html">Grid</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/typography.html">Typography</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/buttons.html">Buttons</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/textures.html">Textures</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/forms.html">Forms</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/tables.html">Tables</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/images.html">Images</a>
+                        </li>
+                        <li>
+                            <a class="js-nav" href="styleguides/helpers.html">Helpers</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="site-nav__item  dropmenu">
+                    <a href="#" class="site-nav__link" data-toggle="dropmenu">
+                        Iconos <em class="fa-chevron-down"></em>
+                    </a>
+
+                    <ul class="dropmenu__list">
+                        <li>
+                            <a class="js-nav" href="styleguides/font-awesome.html">Font Awesome</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 
-
-Descomenta si usas scripts
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3-min.js"><\/script>')</script>
-<script src="js/vendor/script.js"></script>
+    <!-- page content -->
+    <main id="page-content" class="page-content  js-page-content"></main>
 
 
-<script>
-var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-s.parentNode.insertBefore(g,s)}(document,"script"));
-</script>
-
-
-
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+	<script src="styleguides/js/vendors/bootstrap.min.js"></script>
+	<script src="styleguides/js/vendors/jquery.cookie.js"></script>
+	<script src="styleguides/js/vendors/prism.js"></script>
+	<script src="styleguides/js/dropmenu.js"></script>
+	<script src="styleguides/js/dynamic-page.js"></script>
 </body>
 </html>

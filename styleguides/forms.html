@@ -1,0 +1,141 @@
+﻿<div class="page  page--formularios">
+
+    <!-- FORM -->
+    <section class="page-section  section">
+        <h3 class="section__title">Formulario básico</h3>
+
+        <div class="section__body">
+            <form>
+                <fieldset>
+                    <legend>Legend <small>description</small></legend>
+
+                    <div class="form-field">
+                        <input type="text" id="text" required placeholder="Lorem ipsum">
+                        <label for="text" class="required">Input [type=text] - Campo requerido</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="email" id="email" placeholder="johndoe@server.com">
+                        <label for="email">Input [type=email]</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="password" id="password" placeholder="Contraseña">
+                        <label for="password">Input [type=password]</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="url" id="url" placeholder="http://">
+                        <label for="url">Input [type=url]</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="tel" id="fax" placeholder="+34 *** ** ** **">
+                        <label for="Fax" class="help">
+                            Input [type=tel]
+                            <span class="help__text">
+                                Formatos permitidos:<br>
+                                +00 *** ** ** ** [ext. ****]<br>
+                                +00 *** *** ** ** [ext. ****]<br>
+                                +00 (***) *** ** ** [ext. ****]<br>
+                                +00 *** *** **** [ext. ****]<br>
+                                +00 (***) *** **** [ext. ****]
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="tel" id="tel" placeholder="+34 *** ** ** **">
+                        <label for="tel">Input [type=tel]</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" id="deshabilitado" value="John Doe" disabled>
+                        <label for="deshabilitado">Deshabilitado</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="email" id="lectura" value="johndoe@server.com" readonly>
+                        <label for="lectura">Sólo lectura</label>
+                    </div>
+
+                    <div class="form-field">
+                        <select>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                            <option value="3">Opción 3</option>
+                            <option value="4">Opción 4</option>
+                            <option value="5">Opción 5</option>
+                        </select>
+                        <label for="select">Select</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="file" id="file">
+                        <label for="file">Input [type=file]</label>
+                    </div>
+
+                    <div class="form-field">
+                        <textarea id="mensaje"></textarea>
+                        <label for="mensaje">Textarea</label>
+                    </div>
+                </fieldset>
+
+                <div class="form__actions">
+                    <input type="reset" class="btn--secondary" value="Reset">
+                    <input type="submit" class="btn--primary" value="Send">
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- CHECKBOX AND RADIO BUTTONS -->
+    <section class="page-section  section">
+        <h3 class="section__title">Checkbox / radio</h3>
+        <div class="section__body">
+            <div>
+                <input id="ensalada_chk" type="checkbox" checked>
+                <label for="ensalada_chk">Ensalada</label>
+
+                <input id="pizza_chk" type="checkbox">
+                <label for="pizza_chk">Pizza</label>
+
+                <input id="baklava_chk" type="checkbox">
+                <label for="baklava_chk">Baklava</label>
+            </div>
+
+            <div>
+                <input id="meal" type="radio" name="size">
+                <label for="meal">Happy Meal</label>
+
+                <input id="mediano" type="radio" name="size" checked>
+                <label for="mediano">Menú Mediano</label>
+
+                <input id="grande" type="radio" name="size">
+                <label for="grande">Menú Grande</label>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- INPUTS GROUP -->
+    <section class="page-section  section">
+        <h3 class="section__title">Inputs group</h3>
+        <div class="section__body">
+            <div class="input-group">
+                <input type="text" id="accion" placeholder="Lorem ipsum">
+                <label for="accion">Search</label>
+                <button type="button" class="btn--primary">Action 1</button>
+            </div>
+    
+<pre><code class="language-html">&lt;div class="input-group"&gt;
+    &lt;input type="text" id="accion" placeholder="Lorem ipsum"&gt;
+    &lt;label for="accion"&gt;Search&lt;/label&gt;
+    &lt;button type="button" class="btn--primary"&gt;Action 1&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+    </section>
+</div>

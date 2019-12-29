@@ -1,0 +1,662 @@
+
+
+
+
+
+/************
+************************ $MISCELLANEOUS
+************/
+
+.page-header {
+    padding-top: $nav-lineheight;
+}
+
+.page-content {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 1rem;
+
+	@include respond-to(medium) {
+		max-width: $page-max-width;
+	}
+}
+
+.section {
+	margin: 2em 0;
+	padding: 0;
+	box-shadow: shadow(default);
+	// border: 1px solid $color-lightergrey;
+	border-radius: $radius;
+	background-color: $color-white;
+}
+
+.section__title {
+	border-bottom: 1px solid $color-lightgrey;
+	padding: 0.5rem 1rem;
+}
+
+.section__body {
+	padding: 1em;
+}
+
+.subsection-title {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.box {
+	position: relative;
+	display: inline-block;
+	padding: 2em 1em;
+	margin-bottom: 4em;
+	text-align: center;
+	margin-right: 1em;
+	width: 150px;
+
+	&:after {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding-top: 0.5em;
+		color: $color-text;
+		text-align: left;
+	}
+}
+
+
+pre {
+	padding: 0.5em;
+	margin: 0.5em 0 2em;
+	overflow: auto;
+}
+
+.dialog-wrapper {
+	position: relative;
+	padding-bottom: 10em;
+}
+
+.grid-size {
+	font-weight: $font-text-bold;
+
+	&:before {
+		content: "#{$grid-size}";
+	}
+}
+
+
+
+/************
+************************ $COLOR PALETTE
+************/
+
+
+/** Primary color
+****/
+.color-primary {
+	background-color: $color-primary;
+	border: 1px solid darken($color-primary, 10%);
+	color: darken($color-primary, 50%);
+
+	&:before {
+		content: "#{$color-primary}";
+	}
+
+	&:after {
+		content: "$color-primary";
+	}
+}
+
+.color-primary-light {
+	background-color: $color-primary-light;
+	border: 1px solid darken($color-primary-light, 10%);
+	color: darken($color-primary-light, 50%);
+
+	&:before {
+		content: "#{$color-primary-light}";
+	}
+
+	&:after {
+		content: "$color-primary-light";
+	}
+}
+
+.color-primary-dark {
+	background-color: $color-primary-dark;
+	border: 1px solid darken($color-primary-dark, 10%);
+	color: $color-white;
+
+	&:before {
+		content: "#{$color-primary-dark}";
+	}
+
+	&:after {
+		content: "$color-primary-dark";
+	}
+}
+
+
+/** Secondary color
+****/
+.color-secondary {
+	background-color: $color-secondary;
+	border: 1px solid darken($color-secondary, 10%);
+	color: darken($color-secondary, 50%);
+
+	&:before {
+		content: "#{$color-secondary}";
+	}
+
+	&:after {
+		content: "$color-secondary";
+	}
+}
+
+/** Secondary color light
+****/
+.color-secondary-light {
+	background-color: $color-secondary-light;
+	border: 1px solid darken($color-secondary-light, 10%);
+	color: darken($color-secondary-light, 50%);
+
+	&:before {
+		content: "#{$color-secondary-light}";
+	}
+
+	&:after {
+		content: "$color-secondary-light";
+	}
+}
+
+
+/** Secondary color dark
+****/
+.color-secondary-dark {
+	background-color: $color-secondary-dark;
+	border: 1px solid darken($color-secondary-dark, 10%);
+	color: darken($color-secondary-dark, 50%);
+
+	&:before {
+		content: "#{$color-secondary-dark}";
+	}
+
+	&:after {
+		content: "$color-secondary-dark";
+	}
+}
+
+
+/** Accent color
+****/
+.color-accent {
+	background-color: $color-accent;
+	border: 1px solid darken($color-accent, 10%);
+	color: darken($color-accent, 50%);
+
+	&:before {
+		content: "#{$color-accent}";
+	}
+
+	&:after {
+		content: "$color-accent";
+	}
+}
+.color-accent-light {
+	background-color: $color-accent-light;
+	border: 1px solid darken($color-accent-light, 10%);
+	color: darken($color-accent-light, 50%);
+
+	&:before {
+		content: "#{$color-accent-light}";
+	}
+
+	&:after {
+		content: "$color-accent-light";
+	}
+}
+.color-accent-dark {
+	background-color: $color-accent-dark;
+	border: 1px solid darken($color-accent-dark, 10%);
+	color: darken($color-accent-dark, 50%);
+
+	&:before {
+		content: "#{$color-accent-dark}";
+	}
+
+	&:after {
+		content: "$color-accent-dark";
+	}
+}
+
+
+
+
+/** Gray scale
+****/
+
+.color-black {
+	background-color: $color-black;
+	border: 1px solid darken($color-black, 10%);
+	color: invert($color-black);
+
+	&:before {
+		content: "#{$color-black}";
+	}
+
+	&:after {
+		content: "$color-black";
+	}
+}
+
+.color-white {
+	background-color: $color-white;
+	border: 1px solid darken($color-white, 10%);
+	color: invert($color-white);
+
+	&:before {
+		content: "#{$color-white}";
+	}
+
+	&:after {
+		content: "$color-white";
+	}
+}
+
+.color-grey {
+	background-color: $color-grey;
+	border: 1px solid darken($color-grey, 10%);
+	color: lighten($color-grey, 50%);
+
+	&:before {
+		content: "#{$color-grey}";
+	}
+
+	&:after {
+		content: "$color-grey";
+	}
+}
+
+.color-lightgrey {
+	background-color: $color-lightgrey;
+	border: 1px solid darken($color-lightgrey, 10%);
+	color: invert($color-lightgrey);
+
+	&:before {
+		content: "#{$color-lightgrey}";
+	}
+
+	&:after {
+		content: "$color-lightgrey";
+	}
+}
+
+.color-lightergrey {
+	background-color: $color-lightergrey;
+	border: 1px solid darken($color-lightergrey, 10%);
+	color: invert($color-lightergrey);
+
+	&:before {
+		content: "#{$color-lightergrey}";
+	}
+
+	&:after {
+		content: "$color-lightergrey";
+	}
+}
+
+.color-darkgrey {
+	background-color: $color-darkgrey;
+	border: 1px solid darken($color-darkgrey, 10%);
+	color: invert($color-darkgrey);
+
+	&:before {
+		content: "#{$color-darkgrey}";
+	}
+
+	&:after {
+		content: "$color-darkgrey";
+	}
+}
+
+
+
+
+
+
+/** Third party colors
+****/
+
+.color-facebook {
+	background-color: $color-facebook;
+	border: 1px solid darken($color-facebook, 10%);
+	color: darken($color-facebook, 50%);
+
+	&:before {
+		content: "#{$color-facebook}";
+	}
+
+	&:after {
+		content: "$color-facebook";
+	}
+}
+
+.color-twitter {
+	background-color: $color-twitter;
+	border: 1px solid darken($color-twitter, 10%);
+	color: darken($color-twitter, 50%);
+
+	&:before {
+		content: "#{$color-twitter}";
+	}
+
+	&:after {
+		content: "$color-twitter";
+	}
+}
+
+.color-googleplus {
+	background-color: $color-googleplus;
+	border: 1px solid darken($color-googleplus, 10%);
+	color: darken($color-googleplus, 50%);
+
+	&:before {
+		content: "#{$color-googleplus}";
+	}
+
+	&:after {
+		content: "$color-googleplus";
+	}
+}
+
+.color-linkedin {
+	background-color: $color-linkedin;
+	border: 1px solid darken($color-linkedin, 10%);
+	color: darken($color-linkedin, 50%);
+
+	&:before {
+		content: "#{$color-linkedin}";
+	}
+
+	&:after {
+		content: "$color-linkedin";
+	}
+}
+
+.color-rss {
+	background-color: $color-rss;
+	border: 1px solid darken($color-rss, 10%);
+	color: darken($color-rss, 50%);
+
+	&:before {
+		content: "#{$color-rss}";
+	}
+
+	&:after {
+		content: "$color-rss";
+	}
+}
+
+
+
+
+
+/************
+************************ $SHADOW DEPTH
+************/
+.shadow-default, .shadow-low, .shadow-middle, .shadow-modal, .shadow-dialog {
+    display: inline-block;
+    padding: 2em;
+    margin: 1em;
+}
+
+.shadow-default {
+    box-shadow: shadow(default);
+}
+.shadow-low {
+    box-shadow: shadow(low);
+}
+.shadow-middle {
+    box-shadow: shadow(middle);
+}
+.shadow-modal {
+    box-shadow: shadow(modal);
+}
+.shadow-dialog {
+    box-shadow: shadow(dialog);
+}
+
+
+
+
+
+/************
+************************ $TEXTURES
+************/
+
+.color-info {
+	background-color: $color-info;
+	border: 1px solid darken($color-info, 10%);
+	color: darken($color-info, 50%);
+
+	&:before {
+		content: "#{$color-info}";
+	}
+
+	&:after {
+		content: "$color-info";
+	}
+}
+.color-info-light {
+	background-color: $color-info-light;
+	border: 1px solid darken($color-info-light, 10%);
+	color: darken($color-info-light, 50%);
+
+	&:before {
+		content: "#{$color-info-light}";
+	}
+
+	&:after {
+		content: "$color-info-light";
+	}
+}
+.color-success {
+	background-color: $color-success;
+	border: 1px solid darken($color-success, 10%);
+	color: darken($color-success, 50%);
+
+	&:before {
+		content: "#{$color-success}";
+	}
+
+	&:after {
+		content: "$color-success";
+	}
+}
+.color-success-light {
+	background-color: $color-success-light;
+	border: 1px solid darken($color-success-light, 10%);
+	color: darken($color-success-light, 50%);
+
+	&:before {
+		content: "#{$color-success-light}";
+	}
+
+	&:after {
+		content: "$color-success-light";
+	}
+}
+.color-warning {
+	background-color: $color-warning;
+	border: 1px solid darken($color-warning, 10%);
+	color: darken($color-warning, 50%);
+
+	&:before {
+		content: "#{$color-warning}";
+	}
+
+	&:after {
+		content: "$color-warning";
+	}
+}
+.color-warning-light {
+	background-color: $color-warning-light;
+	border: 1px solid darken($color-warning-light, 10%);
+	color: darken($color-warning-light, 50%);
+
+	&:before {
+		content: "#{$color-warning-light}";
+	}
+
+	&:after {
+		content: "$color-warning-light";
+	}
+}
+.color-danger {
+	background-color: $color-danger;
+	border: 1px solid darken($color-danger, 10%);
+	color: darken($color-danger, 50%);
+
+	&:before {
+		content: "#{$color-danger}";
+	}
+
+	&:after {
+		content: "$color-danger";
+	}
+}
+.color-danger-light {
+	background-color: $color-danger-light;
+	border: 1px solid darken($color-danger-light, 10%);
+	color: darken($color-danger-light, 50%);
+
+	&:before {
+		content: "#{$color-danger-light}";
+	}
+
+	&:after {
+		content: "$color-danger-light";
+	}
+}
+
+
+
+
+
+.category {
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	border-radius: 5em;
+	padding: 0.5em 0.5em 0.5em 5em;
+
+	border: 1px solid $color-primary;
+
+	@extend %clear;
+}
+
+.category__icon {
+	position: absolute;
+	top: 50%;
+	left: 0.5em;
+
+	width: 4em;
+	height: 4em;
+	border-radius: 5em;
+	overflow: hidden;
+
+	background-color: $color-primary;
+	color: $color-white;
+
+	@include translate(0, -50%);
+
+	.fa {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include translate(-50%, -50%);
+	}
+
+	.user-front {
+		top: 50% + 2.5;
+		left: 50% - 2.5;
+		text-shadow: 1px -1px 0px $color-primary;
+		z-index: 1;
+	}
+
+	.user-back {
+		top: 45% + 2.5;
+		left: 60% - 2.5;
+	}
+}
+
+
+.category__name,
+.category__typename,
+.category__fare {
+	display: block;
+}
+
+
+
+.icon-grid {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+	.icon {
+		flex-shrink: 0;
+		flex-grow: 1;
+		flex-basis: calc(100% - 1em);
+		margin: 0.5em;
+		padding: 1em;
+		box-shadow: shadow(low);
+		transition: all $transition-hover linear;
+
+		&:before {
+			margin-right: 0.5em;
+			font-size: fs(large);
+			vertical-align: middle;
+		}
+
+		&:hover {
+			display: block;
+			background-color: $color-primary-light;
+			color: $color-white;
+		}
+
+		@include respond-to(small) {
+			flex-basis: calc(100% / 2 - 1em);
+		}
+
+		@include respond-to(medium) {
+			flex-basis: calc(100% / 3 - 1em);
+		}
+	}
+
+
+	
+
+
+/************
+************************ $GRID LAYOUT
+************/
+
+// remove, it's only for presentation purposes.
+.grid--demo {
+	[class^="grid__item-"], [class*=" grid__item-"] {
+		position: relative;
+		background-color: pink;
+
+		&:after {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			content: "";
+			display: block;
+			box-shadow: 0 0 0 1px black;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+@if $include-paddings == true {
+
+
+
+    /************
+    ************************ $PADDING HELPERS
+    ************/
+
+	@each $propiedad, $prefijo in $rellenos {
+		@each $value in $helper-values {
+			.#{$prefijo}-#{$value} { #{$propiedad}: $value + em }
+		}
+	}
+} 
